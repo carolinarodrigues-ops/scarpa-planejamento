@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Planejamento Estratégico 12M — Scarpa on</title>
+<link rel="icon" type="image/jpeg" href="./v4-logo.jpg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<style>
+:root{
+  --brand:#FF0037;--brand-d:#C8002B;--brand-s:rgba(255,0,55,.08);--brand-st:rgba(255,0,55,.18);
+  --tx:#0A0A0A;--tx2:#3A3A42;--tx3:#5A5A62;--tx4:#8A8A92;
+  --bg:#fff;--bg2:#FAFAFA;--sf:#F4F4F5;--sf2:#EAEAEC;
+  --bd:rgba(0,0,0,.10);--bds:rgba(0,0,0,.16);
+  --gr:#16A34A;--grs:rgba(22,163,74,.10);
+  --am:#D97706;--ams:rgba(217,119,6,.10);
+  --rd:#DC2626;--rds:rgba(220,38,38,.10);
+  --bl:#2563EB;--bls:rgba(37,99,235,.10);
+  --pu:#7C3AED;--pus:rgba(124,58,237,.10);
+  --fd:'Space Grotesk',system-ui,sans-serif;
+  --fb:'Inter',-apple-system,sans-serif;
+  --max:1200px;--px:clamp(20px,4vw,48px);--r:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:var(--fb);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--brand);text-decoration:none}
+.nav{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);z-index:100}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 var(--px);display:flex;align-items:center;gap:18px;height:58px}
+.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-logo img{height:28px;width:auto;border-radius:4px}
+.nav-logo-txt{font-family:var(--fd);font-weight:700;font-size:14px;color:var(--tx);letter-spacing:-.01em}
+.nav-sep{width:1px;height:20px;background:var(--bd);flex-shrink:0}
+.nav-client{font-size:12px;color:var(--tx3)}
+.nav-client strong{color:var(--brand)}
+.tabs-bar{border-bottom:2px solid var(--sf2);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs-bar::-webkit-scrollbar{display:none}
+.tabs-inner{max-width:var(--max);margin:0 auto;padding:0 var(--px);display:flex}
+.tab-btn{padding:12px 16px;font-size:12px;font-weight:600;color:var(--tx3);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;transition:all .18s;white-space:nowrap;margin-bottom:-2px;font-family:var(--fb)}
+.tab-btn:hover{color:var(--tx)}
+.tab-btn.active{color:var(--brand);border-bottom-color:var(--brand)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+.hero{background:#0A0A0A;padding:72px var(--px);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;left:0;top:0;width:5px;height:100%;background:var(--brand)}
+.hero-inner{max-width:var(--max);margin:0 auto}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:12px;font-family:var(--fd)}
+.hero h1{font-family:var(--fd);font-size:clamp(28px,4.5vw,50px);font-weight:700;letter-spacing:-.03em;color:#fff;line-height:1.1;margin-bottom:16px}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.5);max-width:580px;line-height:1.65}
+.hero-meta{margin-top:36px;display:flex;gap:32px;flex-wrap:wrap}
+.hm-lbl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:3px}
+.hm-val{font-family:var(--fd);font-size:15px;font-weight:700;color:#fff}
+.sec{max-width:var(--max);margin:0 auto;padding:52px var(--px)}
+.sec-head{margin-bottom:32px}
+.sec-ey{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:7px;font-family:var(--fd)}
+.sec h2{font-family:var(--fd);font-size:clamp(20px,2.8vw,30px);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:8px}
+.sec h3{font-family:var(--fd);font-size:18px;font-weight:700;letter-spacing:-.01em;margin-bottom:12px;color:var(--tx)}
+.sec-desc{font-size:14px;color:var(--tx3);max-width:640px}
+p{color:var(--tx2);font-size:14px;line-height:1.7;margin-bottom:14px}
+p:last-child{margin-bottom:0}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:13px;margin-bottom:36px}
+.kpi{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);padding:18px}
+.kpi.r{border-left:4px solid var(--rd)}
+.kpi.a{border-left:4px solid var(--am)}
+.kpi.g{border-left:4px solid var(--gr)}
+.kpi.b{border-left:4px solid var(--bl)}
+.kpi.br{border-left:4px solid var(--brand)}
+.kpi.pu{border-left:4px solid var(--pu)}
+.kpi-lbl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tx4);margin-bottom:5px}
+.kpi-val{font-family:var(--fd);font-size:24px;font-weight:700;letter-spacing:-.02em;color:var(--tx);line-height:1;margin-bottom:3px}
+.kpi-note{font-size:11px;color:var(--tx3)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-bottom:28px}
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);padding:22px;border-left:4px solid var(--brand)}
+.card.g{border-left-color:var(--gr)}
+.card.b{border-left-color:var(--bl)}
+.card.a{border-left-color:var(--am)}
+.card.r{border-left-color:var(--rd)}
+.card.pu{border-left-color:var(--pu)}
+.card h4{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--tx);margin-bottom:8px;letter-spacing:-.01em}
+.card p{font-size:13px;color:var(--tx2);margin-bottom:0;overflow-wrap:break-word;word-break:break-word}
+.card ul{font-size:12px;color:var(--tx2);list-style:none;padding:0;margin-top:8px}
+.card ul li{padding:4px 0;border-bottom:1px solid var(--bd);display:flex;align-items:flex-start;gap:7px;overflow-wrap:break-word;word-break:break-word;min-width:0}
+.card ul li:last-child{border:none}
+.card ul li::before{content:'→';color:var(--brand);flex-shrink:0;font-size:11px;margin-top:2px}
+.funnel{display:flex;flex-direction:column}
+.fstep{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--bd)}
+.fstep:last-child{border:none}
+.fnum{width:30px;height:30px;min-width:30px;border-radius:50%;background:var(--brand);color:#fff;font-family:var(--fd);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
+.fnum.g{background:var(--gr)}.fnum.b{background:var(--bl)}.fnum.a{background:var(--am)}.fnum.pu{background:var(--pu)}
+.fcont h5{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--tx);margin-bottom:2px}
+.fcont p{font-size:12px;color:var(--tx3);margin:0;line-height:1.5}
+.ibox{border-radius:var(--r);padding:13px 17px;margin-bottom:18px;font-size:13px;color:var(--tx2);line-height:1.6}
+.ibox.danger{background:var(--rds);border-left:4px solid var(--rd)}
+.ibox.warn{background:var(--ams);border-left:4px solid var(--am)}
+.ibox.ok{background:var(--grs);border-left:4px solid var(--gr)}
+.ibox.tip{background:var(--bls);border-left:4px solid var(--bl)}
+.ibox.brand{background:var(--brand-s);border-left:4px solid var(--brand)}
+.ibox.pu{background:var(--pus);border-left:4px solid var(--pu)}
+.ibox strong{color:var(--tx);font-weight:600}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+@media(max-width:768px){.two-col,.three-col{grid-template-columns:1fr}}
+ul.ck{list-style:none;padding:0;margin-bottom:14px}
+ul.ck li{padding:5px 0;font-size:13px;color:var(--tx2);display:flex;gap:9px;align-items:flex-start;border-bottom:1px solid var(--bd)}
+ul.ck li:last-child{border:none}
+ul.ck li::before{content:'✓';color:var(--gr);font-weight:700;font-size:11px;margin-top:3px;flex-shrink:0}
+ul.ck.x li::before{content:'✕';color:var(--rd)}
+ul.ck.dot li::before{content:'•';color:var(--brand);font-size:14px;margin-top:0}
+.tbl-wrap{overflow-x:auto;margin-bottom:24px;border-radius:var(--r);border:1px solid var(--bd)}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead th{background:var(--sf);font-family:var(--fd);font-weight:700;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--tx3);padding:8px 10px;text-align:left;border-bottom:2px solid var(--bds);white-space:nowrap}
+tbody td{padding:9px 10px;border-bottom:1px solid var(--bd);color:var(--tx2);vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:var(--bg2)}
+.td-m{font-family:var(--fd);font-weight:700;color:var(--tx)!important;white-space:nowrap}
+.td-g{color:var(--gr)!important;font-weight:700;font-family:var(--fd)}
+.td-r{color:var(--brand)!important;font-weight:700;font-family:var(--fd)}
+.td-b{color:var(--bl)!important;font-weight:700;font-family:var(--fd)}
+.td-a{color:var(--am)!important;font-weight:700;font-family:var(--fd)}
+.td-tot{background:var(--sf)!important;font-family:var(--fd);font-weight:700;color:var(--tx)!important;border-top:2px solid var(--bds)!important}
+.bi{width:100%;min-width:72px;border:1px solid var(--bd);border-radius:6px;padding:5px 6px;font-family:var(--fb);font-size:11px;color:var(--tx);background:#fff;transition:border-color .2s}
+.bi:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-s)}
+.bdg{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:.04em}
+.bdg-r{background:var(--rds);color:var(--rd)}
+.bdg-g{background:var(--grs);color:var(--gr)}
+.bdg-a{background:var(--ams);color:var(--am)}
+.bdg-b{background:var(--bls);color:var(--bl)}
+.bdg-br{background:var(--brand-s);color:var(--brand-d)}
+.pill{display:inline-block;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:.05em;font-family:var(--fd)}
+.pill-1{background:var(--am);color:#fff}
+.pill-2{background:var(--bl);color:#fff}
+.pill-3{background:var(--gr);color:#fff}
+.pill-4{background:var(--pu);color:#fff}
+hr{border:none;border-top:1px solid var(--bd);margin:32px 0}
+.sec-divider{height:1px;background:linear-gradient(90deg,var(--brand) 0%,transparent 100%);margin:36px 0;opacity:.3}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.tag{display:inline-flex;align-items:center;padding:3px 9px;background:var(--sf);border-radius:20px;font-size:11px;font-weight:600;color:var(--tx2)}
+.tag.r{background:var(--brand-s);color:var(--brand-d)}
+.tag.g{background:var(--grs);color:var(--gr)}
+.tag.b{background:var(--bls);color:var(--bl)}
+.tag.a{background:var(--ams);color:var(--am)}
+.tag.pu{background:var(--pus);color:var(--pu)}
+.dark-blk{background:#0A0A0A;border-radius:var(--r);padding:22px;margin-bottom:16px}
+.dark-blk .ts{font-size:10px;font-weight:700;color:var(--brand);letter-spacing:.06em;margin-bottom:6px;font-family:var(--fd)}
+.dark-blk p{font-size:13px;color:rgba(255,255,255,.75);line-height:1.8;margin:0}
+.footer{background:var(--sf);padding:24px var(--px);text-align:center;border-top:1px solid var(--bd)}
+.footer p{font-size:11px;color:var(--tx4)}
+.bgt-summary{background:#0A0A0A;border-radius:var(--r);padding:22px;margin-top:24px}
+.bgt-summary .bgt-ttl{font-family:var(--fd);font-size:14px;font-weight:700;color:#fff;margin-bottom:16px}
+.bgt-kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.bgt-kpi{text-align:center}
+.bgt-kpi-lbl{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:4px}
+.bgt-kpi-val{font-family:var(--fd);font-size:20px;font-weight:700;color:#fff}
+.bgt-kpi-val.brand{color:var(--brand)}
+.bgt-kpi-val.green{color:#4ADE80}
+.budget-note{background:var(--brand-s);border:1px solid var(--brand-st);border-radius:var(--r);padding:12px 16px;margin-bottom:20px;font-size:12px;color:var(--brand-d)}
+.td-sticky{position:sticky;left:0;z-index:1;background:var(--bg);border-right:2px solid var(--sf2)!important}
+tbody tr:hover .td-sticky{background:var(--bg2)}
+.td-editable{background:rgba(37,99,235,.04);vertical-align:middle}
+.td-calc-r{background:rgba(255,0,55,.03);font-family:var(--fd);font-weight:700;color:var(--brand)!important;white-space:nowrap}
+.td-calc-g{font-family:var(--fd);font-weight:700;color:var(--gr)!important;background:rgba(22,163,74,.05);white-space:nowrap}
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px dashed var(--bd)}
+.tl-item:last-child{border:none}
+.tl-dot{width:36px;height:36px;min-width:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:700;font-size:11px;color:#fff}
+.tl-dot.brand{background:var(--brand)}
+.tl-dot.bl{background:var(--bl)}
+.tl-dot.gr{background:var(--gr)}
+.tl-dot.pu{background:var(--pu)}
+.tl-dot.am{background:var(--am)}
+.tl-body h5{font-family:var(--fd);font-size:14px;font-weight:700;color:var(--tx);margin-bottom:4px}
+.tl-body p{font-size:12px;color:var(--tx3);line-height:1.55;margin:0}
+.tl-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+@media(max-width:640px){
+  .kpi-grid{grid-template-columns:1fr 1fr}
+  .hero{padding:44px var(--px)}
+  .kpi-val{font-size:20px}
+  .bgt-kpis{grid-template-columns:1fr 1fr}
+}
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  .nav,.tabs-bar,.footer,button{display:none!important}
+  .tab-pane{display:block!important;page-break-before:always;break-before:always}
+  .tab-pane:first-of-type{page-break-before:avoid;break-before:avoid}
+  .hero{padding:40px 32px}
+  .sec{padding:36px 32px}
+  .card,.kpi,.ibox,.funnel,.tbl-wrap{page-break-inside:avoid;break-inside:avoid}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <img src="./v4-logo.jpg" alt="V4"/>
+      <span class="nav-logo-txt">V4 Aguiar &amp; CO</span>
+    </div>
+    <div class="nav-sep"></div>
+    <span class="nav-client">Planejamento 12M — <strong>Scarpa on</strong></span>
+    <button onclick="window.print()" style="margin-left:auto;background:var(--brand);color:#fff;border:none;padding:7px 18px;border-radius:6px;font-family:var(--fd);font-size:11px;font-weight:700;cursor:pointer;flex-shrink:0;letter-spacing:-.01em;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">⬇ Baixar PDF</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Estruturação Estratégica — Planejamento de 12 Meses</div>
+    <h1>Estratégia de Aquisição,<br>Monetização e Retenção</h1>
+    <p class="hero-sub">Estratégia completa de Google Ads, Meta Ads e TikTok Ads para a Scarpa on construir presença digital, atrair motoboys e revendedores e vender diretamente pelo WhatsApp.</p>
+    <div class="hero-meta">
+      <div><div class="hm-lbl">Cliente</div><div class="hm-val">Scarpa on (Scarpa On Ltda)</div></div>
+      <div><div class="hm-lbl">Segmento</div><div class="hm-val">Auto e Moto Peças</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs-bar">
+  <div class="tabs-inner">
+    <button class="tab-btn active" data-tab="overview" onclick="switchTab('overview')">Visão Geral</button>
+    <button class="tab-btn" data-tab="google" onclick="switchTab('google')">Google Ads ⭐</button>
+    <button class="tab-btn" data-tab="meta" onclick="switchTab('meta')">Meta Ads</button>
+    <button class="tab-btn" data-tab="tiktok" onclick="switchTab('tiktok')">TikTok Ads</button>
+    <button class="tab-btn" data-tab="sazonalidade" onclick="switchTab('sazonalidade')">Sazonalidade</button>
+    <button class="tab-btn" data-tab="budget" onclick="switchTab('budget')">Budget 12M ✏️</button>
+    <button class="tab-btn" data-tab="roadmap" onclick="switchTab('roadmap')">Roadmap</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     TAB 1 — VISÃO GERAL
+══════════════════════════════════════════════ -->
+<div id="overview" class="tab-pane active">
+<div class="sec" style="padding-bottom:0">
+  <div class="sec-head">
+    <div class="sec-ey">Guia de Leitura</div>
+    <h2>Como ler este documento</h2>
+    <p class="sec-desc">O planejamento está organizado em 6 abas temáticas. A aba Google Ads é a prioridade máxima — comece por ela.</p>
+  </div>
+  <div class="cards" style="margin-bottom:8px">
+    <div class="card br"><h4>Visão Geral</h4><p>Diagnóstico atual: alertas críticos, posição competitiva, perfis de público e objetivos do projeto.</p></div>
+    <div class="card b"><h4>Google Ads ⭐</h4><p>Canal primário. Pesquisa paga captura intenção de compra declarada — "guidão titan 160 comprar". Campanhas, grupos de anúncios, palavras-chave e YouTube Ads.</p></div>
+    <div class="card a"><h4>Meta Ads</h4><p>Canal de demanda para motoboys e revendedores. Campanhas de mensagem, tráfego, ofertas relâmpago, remarketing e B2B.</p></div>
+    <div class="card pu"><h4>TikTok Ads</h4><p>Estratégia cautelosa: verificação de conta, boas práticas anti-bloqueio e Spark Ads após aprovação da categoria.</p></div>
+    <div class="card a"><h4>Sazonalidade</h4><p>Calendário de 12 meses com picos de demanda, datas gêmeas, Black Friday e ajustes de budget por período.</p></div>
+    <div class="card r"><h4>Budget 12M ✏️</h4><p>Investimento por campanha e por mês, gráfico mensal por canal e Roadmap em calendário Gantt sincronizado.</p></div>
+  </div>
+</div>
+<div class="sec-divider" style="margin:32px var(--px) 0"></div>
+
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-ey">Diagnóstico Atual</div>
+    <h2>Estado do negócio em junho/2026</h2>
+    <p class="sec-desc">A Scarpa on tem produto, margem e operação. O que falta é presença digital própria: sem Google Ads, sem Meta Ads, sem processo comercial estruturado para capturar leads diretos.</p>
+  </div>
+
+  <div class="cards">
+    <div class="card r">
+      <h4>🔴 Invisível nas buscas do Google</h4>
+      <p>Quem pesquisa "guidão titan 160" ou "estribo fan 125" no Google não encontra a Scarpa on — encontra os concorrentes. A ausência de Google Ads é o gap principal a corrigir.</p>
+      <div class="tags"><span class="tag r">Gap crítico</span></div>
+    </div>
+    <div class="card r">
+      <h4>🔴 Sem canal próprio de aquisição</h4>
+      <p>A Scarpa on não controla seus próprios leads. Sem Google Ads, sem Meta Ads e sem processo de WhatsApp, toda venda direta começa do zero. Construir canal próprio é a prioridade estratégica.</p>
+      <div class="tags"><span class="tag r">Gap crítico</span></div>
+    </div>
+    <div class="card a">
+      <h4>🟡 TikTok Ads com restrição ativa</h4>
+      <p>A categoria de metais (guidão, estribo, pedal) aguarda aprovação manual no TikTok. Escalar anúncios antes da confirmação pode gerar penalidades e banimento da conta. Estratégia cautelosa até aprovação.</p>
+      <div class="tags"><span class="tag a">Atenção</span></div>
+    </div>
+    <div class="card g">
+      <h4>✅ Produto com demanda real e recorrente</h4>
+      <p>Peças de moto quebram, desgastam e precisam ser trocadas. A demanda não é criada — ela existe. O trabalho é capturar essa intenção de compra no momento certo, especialmente via Google Search.</p>
+      <div class="tags"><span class="tag g">Oportunidade</span></div>
+    </div>
+    <div class="card g">
+      <h4>✅ Margem real para investir</h4>
+      <p>Com margem de até 60% em produtos Gitanes e linha de metal, há espaço para investir em tráfego pago com ROAS positivo mesmo em campanhas iniciais.</p>
+      <div class="tags"><span class="tag g">Oportunidade</span></div>
+    </div>
+    <div class="card b">
+      <h4>💡 Oportunidade B2B ainda inexplorada</h4>
+      <p>Revendedores e oficinas já compram volume de forma não estruturada. Uma campanha específica para esse público, com catálogo e condições de atacado, pode multiplicar o ticket médio por pedido.</p>
+      <div class="tags"><span class="tag b">Potencial</span></div>
+    </div>
+  </div>
+
+  <div class="sec-head" style="margin-top:0">
+    <div class="sec-ey">Portfólio e Estratégia de Produtos</div>
+    <h2>Curva de produtos: chamariz vs. margem</h2>
+    <p class="sec-desc">Nem todos os produtos têm o mesmo papel nas campanhas. A estratégia separa produto de entrada (volume, menor margem) de produto de margem (ticket médio, melhor rentabilidade).</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="ibox brand" style="margin-bottom:16px"><strong>Produto chamariz (entrada):</strong> Guidão cromado — alto giro, baixa margem relativa. Serve para atrair o comprador. É o produto que inicia o relacionamento.</div>
+      <div class="card r">
+        <h4>Guidão cromado</h4>
+        <p>Produto de maior volume e alto giro. Caro para anunciar diretamente por ter margem menor. Funciona como isca — o cliente chega pelo guidão e compra o estribo, cavalete ou kit junto no mesmo pedido.</p>
+        <ul>
+          <li>Papel nas campanhas: produto âncora em Shopping e Search</li>
+          <li>Estratégia: baixar CPC, usar como gateway para o restante do pedido</li>
+          <li>KPI: volume de visitas, não ROAS isolado</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="ibox ok" style="margin-bottom:16px"><strong>Produtos de margem (protegem o ROAS):</strong> Estribo, cavalete, pedal, kits, bagageiros, linha de metal Pro Tork e linha Gitanes. São esses que sustentam o retorno das campanhas.</div>
+      <div class="card g">
+        <h4>Estribo · Cavalete · Pedal · Kits · Gitanes</h4>
+        <p>Melhor margem do portfólio — até 60% na linha Gitanes. São os produtos que garantem ROAS positivo em campanhas pagas. Devem ser os protagonistas nos criativos de Meta Ads e nos grupos de anúncio do Google.</p>
+        <ul>
+          <li>Papel nas campanhas: produto principal de conversão</li>
+          <li>Estratégia: anunciar diretamente com destaque de diferencial</li>
+          <li>KPI: ROAS &gt; 4x, custo por venda, ticket médio</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="sec-head" style="margin-top:0">
+    <div class="sec-ey">Objetivos do Projeto</div>
+    <h2>O que a Scarpa on quer construir</h2>
+  </div>
+
+  <div class="cards">
+    <div class="card br">
+      <h4>Objetivo 1 — Ser encontrada no Google e nas redes sociais</h4>
+      <p>A Scarpa on quer aparecer quando o motoboy pesquisa a peça que precisa — no Google, no Instagram e no TikTok. Construir presença digital própria, com tráfego controlado pela Scarpa.</p>
+      <div class="tags"><span class="tag r">Google Ads + Meta Ads</span></div>
+    </div>
+    <div class="card g">
+      <h4>Objetivo 2 — Estruturar canal direto via WhatsApp</h4>
+      <p>Vender diretamente, com margem maior e relacionamento próprio com o cliente. O WhatsApp é o destino de toda a mídia paga — o canal onde a venda acontece de fato.</p>
+      <div class="tags"><span class="tag g">CRM + Scripts + SLA 5min</span></div>
+    </div>
+    <div class="card b">
+      <h4>Objetivo 3 — Ativar o canal B2B (oficinas e revendedores)</h4>
+      <p>Revendedores e oficinas já compram volume de forma não estruturada. Um canal dedicado, com catálogo e condições de atacado, pode dobrar o ticket médio por pedido sem aumentar o custo de aquisição proporcionalmente.</p>
+      <div class="tags"><span class="tag b">Catálogo B2B + campanha específica</span></div>
+    </div>
+    <div class="card a">
+      <h4>Objetivo 4 — Construir marca reconhecida no segmento</h4>
+      <p>O objetivo de médio prazo é que o motoboy procure a Scarpa diretamente — pelo nome. Marca forte reduz o custo de aquisição ao longo do tempo e aumenta retenção.</p>
+      <div class="tags"><span class="tag a">Conteúdo + Meta Ads + TikTok</span></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     TAB 3 — GOOGLE ADS
+══════════════════════════════════════════════ -->
+<div id="google" class="tab-pane">
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-ey">Canal Primário — Pesquisa Paga</div>
+    <h2>Google Ads — Por que é o canal prioritário</h2>
+    <p class="sec-desc">Moto peças são compradas por necessidade, não por impulso. Quando o guidão quebra ou o estribo precisa de troca, o motoboy abre o Google — não o Instagram. Capturar esse momento é mais eficiente do que criar demanda.</p>
+  </div>
+
+  <div class="dark-blk">
+    <div class="ts">RACIOCÍNIO ESTRATÉGICO</div>
+    <p>O Meta Ads e o TikTok Ads criam demanda — eles mostram o produto para alguém que talvez não estivesse pensando em comprar. O Google Search captura demanda que já existe: o usuário digitou "estribo fan 125 comprar" porque já quer comprar. A taxa de conversão de leads de pesquisa paga para moto peças é estruturalmente maior do que a de leads de redes sociais. Por isso o Google vem primeiro.</p>
+  </div>
+
+  <div class="cards" style="margin-top:24px">
+    <div class="card br">
+      <h4>Intenção de compra declarada</h4>
+      <p>"Guidão cromado titan 160 comprar" — quem pesquisa isso já quer comprar. O Google captura o lead no momento de maior intenção, reduzindo o custo de convencimento.</p>
+    </div>
+    <div class="card b">
+      <h4>Concorrência ainda baixa</h4>
+      <p>SBS Motos é o único concorrente consolidado no Google Ads. O leilão de palavras de moto peças tem CPC acessível — a janela de vantagem ainda está aberta.</p>
+    </div>
+    <div class="card a">
+      <h4>Alta recorrência de compra</h4>
+      <p>Motoboys trocam peças regularmente. Um cliente adquirido via Google Search tem alto LTV — volta para comprar estribo, pedal, cavalete, kit. O custo de aquisição se dilui.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>Estrutura de Campanhas Google Ads</h3>
+
+  <div class="ibox brand"><strong>Destino das campanhas:</strong> Todos os anúncios de pesquisa devem levar para uma Landing Page própria da Scarpa on (a ser criada) com CTA direto para o WhatsApp. Sem site próprio, usar LP dedicada com formulário simples (nome + número + moto + peça) que cai no WhatsApp via link automático.</div>
+
+  <div class="cards">
+    <div class="card b">
+      <h4><span class="pill pill-2" style="margin-right:8px">Campanha 1</span> Rede de Pesquisa — Produtos de Margem</h4>
+      <p>Campanha principal. Captura intenção de compra para os produtos de melhor margem: estribo, cavalete, pedal, kits e linha Gitanes. Estes são os produtos que sustentam o ROAS positivo.</p>
+      <ul>
+        <li>Objetivo: Conversões (mensagem no WhatsApp ou formulário)</li>
+        <li>Match: frase + exata. Sem broad no início</li>
+        <li>Grupos de anúncio: um por categoria de produto — estribo/cavalete/kits (foco em ROAS), guidão (foco em volume e entrada de funil) e peças de carro (expansão futura — ativar quando a frente automotiva estiver operacional)*</li>
+        <li>LP: página dedicada por categoria com CTA para WhatsApp</li>
+        <li>KPI: custo por conversa iniciada &lt; R$ 8, ROAS &gt; 4x</li>
+      </ul>
+      <div class="tags"><span class="tag r">Sempre ativa</span><span class="tag b">Prioridade máxima</span></div>
+      <p style="font-size:11px;color:var(--tx4);margin-top:12px;border-top:1px solid var(--sf2);padding-top:10px">* Assim que for adicionada a comunicação de carros, avaliar o investimento novamente — recomenda-se acrescentar um orçamento adicional de 45% da verba desta campanha.</p>
+    </div>
+
+    <div class="card a">
+      <h4><span class="pill pill-1" style="margin-right:8px">Campanha 4</span> Rede de Pesquisa — B2B (Oficinas e Revendedores)</h4>
+      <p>Campanha separada para capturar oficinas mecânicas e revendedores que buscam fornecedor de peças em volume. Ticket médio B2B é 10–30x maior que B2C — justifica CPL mais alto.</p>
+      <ul>
+        <li>Objetivo: Leads qualificados B2B</li>
+        <li>LP dedicada: proposta B2B com tabela de preços por volume, condições, prazo</li>
+        <li>Match: frase + exata para termos B2B</li>
+        <li>KPI: CPL &lt; R$ 30, taxa de conversão LP &gt; 3%</li>
+      </ul>
+      <div class="tags"><span class="tag pu">Ticket alto</span></div>
+    </div>
+
+    <div class="card b" style="border-left-color:var(--rd)">
+      <h4><span class="pill pill-1" style="margin-right:8px;background:var(--rd)">Campanha 5</span> YouTube Ads — Problema em Vídeo</h4>
+      <p>Para o nicho de moto peças, mostrar o <strong>problema antes da solução</strong> funciona muito bem em vídeo: guidão torto, estribo quebrado, cavalete que não sustenta. O motoboy se identifica e busca a solução. YouTube cria demanda antes da pesquisa acontecer.</p>
+      <ul>
+        <li>Formato: TrueView In-Stream 15–30s (pulável após 5s) — foco no problema nos primeiros 5s</li>
+        <li>Roteiro: "Isso já aconteceu com você?" → mostra o problema → apresenta o produto Scarpa como solução</li>
+        <li>Público: homens 18–45, interesse em motocicleta, motoboy, mecânica · + remarketing de quem visitou a LP</li>
+        <li>Bumper Ads 6s: para remarketing — lembrança de marca com baixo custo por mil impressões</li>
+        <li>Destino: LP da Scarpa ou direto para WhatsApp via CTA no vídeo</li>
+        <li>KPI: CPV (custo por visualização) &lt; R$ 0,10, taxa de view completo &gt; 25%, assistência em conversões</li>
+      </ul>
+      <div class="tags"><span class="tag r">Topo de funil — cria demanda</span><span class="tag b">Remarketing de alta eficiência</span></div>
+    </div>
+
+    <div class="card pu">
+      <h4><span class="pill pill-4" style="margin-right:8px">Campanha 6</span> RMKT Display — Reativar Visitantes</h4>
+      <p>Reativar quem visitou a LP nos últimos 30 dias sem converter. Banners visuais na Rede de Display do Google — custo baixo, conversão maior por já existir reconhecimento da marca.</p>
+      <ul>
+        <li>Público: visitou LP nos últimos 30 dias sem iniciar conversa</li>
+        <li>Formatos: banners responsivos com foto do produto visitado</li>
+        <li>Frequência: limitar a 3 impressões/dia para não saturar</li>
+        <li>KPI: CPC &lt; R$ 1,50, taxa de retorno à LP</li>
+      </ul>
+      <div class="tags"><span class="tag pu">Fase 2 — após acumular audiência</span></div>
+    </div>
+
+    <div class="card r">
+      <h4><span class="pill pill-3" style="margin-right:8px">Campanha 6 — Escala</span> Performance Max</h4>
+      <p>Campanha automatizada que distribui criativos em todos os canais Google (Search, Shopping, YouTube, Display). Ativar somente após acumular dados suficientes nas campanhas anteriores.</p>
+      <ul>
+        <li>Ativar após: mínimo de 50 conversões nas campanhas anteriores</li>
+        <li>Assets: fotos dos produtos, vídeos curtos (quando disponíveis), headlines e descrições</li>
+        <li>Não substituir as campanhas de pesquisa — complementar</li>
+        <li>KPI: ROAS consolidado, custo por conversão</li>
+      </ul>
+      <div class="tags"><span class="tag g">Fase de escala — M4+</span></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3 style="margin-bottom:6px">Grupos de Anúncio e Palavras-Chave</h3>
+  <p style="font-size:13px;color:var(--tx3);margin-bottom:20px">Match recomendado: frase + exata nas primeiras 4 semanas. Revisar Search Terms Report semanalmente e adicionar negative keywords. Broad match apenas após 30+ conversões por grupo.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Grupo de Anúncio</th><th>Palavra-Chave Principal</th><th>Match</th><th>Intenção</th><th>Produto</th></tr></thead>
+      <tbody>
+        <tr><td class="td-m" rowspan="6">Guidão Cromado</td>
+          <td>"guidão cromado titan 160"</td><td><span class="bdg bdg-g">Exata</span></td><td class="td-g">Compra</td><td>Guidão</td></tr>
+        <tr><td>"guidão cromado cg 160"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Guidão</td></tr>
+        <tr><td>"guidão alto para moto"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Guidão</td></tr>
+        <tr><td>"guidão para fan 125"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Guidão</td></tr>
+        <tr><td>"comprar guidão moto"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Guidão</td></tr>
+        <tr><td>"guidão personalizado moto"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-a">Pesquisa</td><td>Guidão</td></tr>
+
+        <tr><td class="td-m" rowspan="5">Estribo</td>
+          <td>"estribo fan 125"</td><td><span class="bdg bdg-g">Exata</span></td><td class="td-g">Compra</td><td>Estribo</td></tr>
+        <tr><td>"estribo titan 160"</td><td><span class="bdg bdg-g">Exata</span></td><td class="td-g">Compra</td><td>Estribo</td></tr>
+        <tr><td>"estribo para moto baixa cilindrada"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Estribo</td></tr>
+        <tr><td>"estribo moto comprar"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Estribo</td></tr>
+        <tr><td>"estribo pro tork"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Estribo</td></tr>
+
+        <tr><td class="td-m" rowspan="4">Cavalete</td>
+          <td>"cavalete lateral moto"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Cavalete</td></tr>
+        <tr><td>"cavalete titan 160"</td><td><span class="bdg bdg-g">Exata</span></td><td class="td-g">Compra</td><td>Cavalete</td></tr>
+        <tr><td>"cavalete fan 125"</td><td><span class="bdg bdg-g">Exata</span></td><td class="td-g">Compra</td><td>Cavalete</td></tr>
+        <tr><td>"suporte cavalete moto"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Cavalete</td></tr>
+
+        <tr><td class="td-m" rowspan="4">Kits e Acessórios</td>
+          <td>"kit protetor moto"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Kits</td></tr>
+        <tr><td>"bagageiro moto baú"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Bagageiro</td></tr>
+        <tr><td>"bagageiro para moto"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Bagageiro</td></tr>
+        <tr><td>"pedal moto peça"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Pedal</td></tr>
+
+        <tr><td class="td-m" rowspan="4">Peças por Modelo</td>
+          <td>"peças fan 125 comprar"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Variado</td></tr>
+        <tr><td>"peças titan 160"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Variado</td></tr>
+        <tr><td>"acessórios cg 160"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Variado</td></tr>
+        <tr><td>"peças moto baixa cilindrada"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-g">Compra</td><td>Variado</td></tr>
+
+        <tr><td class="td-m" rowspan="4">B2B — Atacado</td>
+          <td>"fornecedor peças moto atacado"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-b">B2B</td><td>Portfólio</td></tr>
+        <tr><td>"distribuidor peças moto são paulo"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-b">B2B</td><td>Portfólio</td></tr>
+        <tr><td>"comprar peças moto revendedor"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-b">B2B</td><td>Portfólio</td></tr>
+        <tr><td>"atacado peças moto honda"</td><td><span class="bdg bdg-b">Frase</span></td><td class="td-b">B2B</td><td>Portfólio</td></tr>
+
+        <tr><td class="td-m" rowspan="3">Negative Keywords</td>
+          <td>[grátis] [usado] [segunda mão] [mecânica]</td><td><span class="bdg bdg-r">Negativa</span></td><td class="td-r">Excluir</td><td>—</td></tr>
+        <tr><td>[tutorial] [como fazer] [DIY] [conserto]</td><td><span class="bdg bdg-r">Negativa</span></td><td class="td-r">Excluir</td><td>—</td></tr>
+        <tr><td>[emprego] [vagas] [concurso]</td><td><span class="bdg bdg-r">Negativa</span></td><td class="td-r">Excluir</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <h3>KPIs de Performance — Google Ads</h3>
+  <div class="kpi-grid" style="margin-bottom:32px">
+    <div class="kpi b"><div class="kpi-lbl">CPC médio esperado</div><div class="kpi-val">R$ 0,80–2,50</div><div class="kpi-note">Pesquisa paga — moto peças no Brasil</div></div>
+    <div class="kpi b"><div class="kpi-lbl">CTR alvo</div><div class="kpi-val">&gt; 5%</div><div class="kpi-note">Anúncio relevante e específico por modelo</div></div>
+    <div class="kpi g"><div class="kpi-lbl">Conv. clique → WhatsApp</div><div class="kpi-val">&gt; 8%</div><div class="kpi-note">Lead de Search tem intenção declarada</div></div>
+    <div class="kpi g"><div class="kpi-lbl">ROAS alvo (M1–2)</div><div class="kpi-val">&gt; 3x</div><div class="kpi-note">Fase de aprendizado — revisar no M3</div></div>
+    <div class="kpi br"><div class="kpi-lbl">Custo por conversa B2C</div><div class="kpi-val">&lt; R$ 15</div><div class="kpi-note">Pesquisa — fase inicial</div></div>
+    <div class="kpi pu"><div class="kpi-lbl">CPL B2B</div><div class="kpi-val">&lt; R$ 35</div><div class="kpi-note">Justificado pelo ticket de atacado</div></div>
+  </div>
+
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     TAB 4 — META ADS
+══════════════════════════════════════════════ -->
+<div id="meta" class="tab-pane">
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-ey">Meta Ads — Facebook &amp; Instagram</div>
+    <h2>Meta Ads — Construção de marca e geração de demanda</h2>
+    <p class="sec-desc">O Meta Ads chega onde o Google não chega: no feed do motoboy quando ele não está pesquisando nada. Serve para criar reconhecimento, gerar demanda e trazer leads para o WhatsApp.</p>
+  </div>
+
+  <div class="ibox brand"><strong>Papel do Meta Ads na estratégia:</strong> O Google captura quem já quer comprar. O Meta Ads convence quem ainda não pensou em comprar — ou quem não sabia que a Scarpa on existe. O destino de todos os anúncios de Meta é o WhatsApp (processo comercial já estruturado).</div>
+
+  <hr>
+
+  <h3>Públicos — Quem a Scarpa on quer atingir</h3>
+  <div class="cards" style="margin-bottom:24px;grid-template-columns:repeat(3,1fr)">
+    <div class="card br">
+      <h4>Pessoa Física — Usuário de moto</h4>
+      <p>Proprietário de moto de baixa cilindrada que compra peça por necessidade — troca, desgaste ou personalização. Prioriza preço, prazo e facilidade de atendimento.</p>
+      <div class="tags"><span class="tag r">B2C · Ticket médio</span></div>
+    </div>
+    <div class="card b">
+      <h4>Motoboy — Uso profissional diário</h4>
+      <p>Entregador que depende da moto para trabalhar. Compra com urgência, valoriza disponibilidade imediata e recompra com frequência. Alto LTV — a moto precisa estar sempre funcionando.</p>
+      <div class="tags"><span class="tag b">B2C · Alta frequência de compra</span></div>
+    </div>
+    <div class="card g">
+      <h4>Revendedor / Oficina — B2B</h4>
+      <p>Mecânico ou lojista que compra em volume para revender ou aplicar nos atendimentos. Ticket médio 10–30x maior que B2C. Canal estratégico para escala da Scarpa on.</p>
+      <div class="tags"><span class="tag g">B2B · Ticket alto · Volume</span></div>
+    </div>
+  </div>
+  <div class="two-col" style="margin-bottom:24px">
+    <div>
+      <h3 style="font-size:15px;margin-bottom:10px">Público Principal — Motoboy / Usuário Diário</h3>
+      <div class="kpi-grid" style="grid-template-columns:1fr 1fr;margin-bottom:12px">
+        <div class="kpi b"><div class="kpi-lbl">Gênero</div><div class="kpi-val" style="font-size:16px">Masc.</div></div>
+        <div class="kpi b"><div class="kpi-lbl">Idade</div><div class="kpi-val" style="font-size:16px">25–55</div></div>
+      </div>
+      <p style="font-size:13px;color:var(--tx2)">Usuários de motos de baixa cilindrada (Titan, Fan, Biz, Factor) que usam a moto no dia a dia — para trabalho como entregador ou transporte pessoal. Compram peças com frequência e priorizam preço e disponibilidade.</p>
+      <div class="tags" style="margin-top:10px">
+        <span class="tag b">Interesses: motocicleta, motoboy</span>
+        <span class="tag b">iFood Entregador, Rappi</span>
+        <span class="tag b">Mecânica de motos</span>
+        <span class="tag g">Comportamento: compradores online frequentes</span>
+        <span class="tag g">Honda, Yamaha (seguidores das marcas)</span>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:15px;margin-bottom:10px">Público Secundário — Entusiastas e B2B</h3>
+      <div class="kpi-grid" style="grid-template-columns:1fr 1fr;margin-bottom:12px">
+        <div class="kpi pu"><div class="kpi-lbl">Gênero</div><div class="kpi-val" style="font-size:16px">Todos</div></div>
+        <div class="kpi pu"><div class="kpi-lbl">Idade</div><div class="kpi-val" style="font-size:16px">25–55</div></div>
+      </div>
+      <p style="font-size:13px;color:var(--tx2)">Proprietários de motos que personalizam ou fazem manutenção própria. Também inclui mecânicos e donos de oficina que buscam fornecedores alternativos. Público B2B com ticket maior.</p>
+      <div class="tags" style="margin-top:10px">
+        <span class="tag pu">Cargo: Mecânico automotivo</span>
+        <span class="tag pu">Interesse: personalização de motos</span>
+        <span class="tag a">Empreendedores de pequenas oficinas</span>
+        <span class="tag a">Interesse: motociclismo, customização</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size:15px;margin-bottom:10px">Locais de veiculação</h3>
+  <div class="tags" style="margin-bottom:24px">
+    <span class="tag r">São Paulo</span>
+    <span class="tag r">Rio de Janeiro</span>
+    <span class="tag r">Curitiba</span>
+    <span class="tag r">Porto Alegre</span>
+    <span class="tag r">Florianópolis</span>
+  </div>
+
+  <hr>
+
+  <h3>Estrutura de Campanhas</h3>
+  <div class="cards">
+    <div class="card b">
+      <h4><span class="pill pill-2" style="margin-right:8px">Campanha 1</span> Mensagens — WhatsApp (Conversão Direta)</h4>
+      <p>Campanha de conversão direta. Leva o motoboy diretamente para o WhatsApp com oferta de produto específico. Mais eficiente quando há produto com preço competitivo e disponibilidade garantida.</p>
+      <ul>
+        <li>Objetivo Meta: Mensagens (WhatsApp Business)</li>
+        <li>Público principal: Motoboys 25–55, interesses em motocicleta, iFood, entregas + LAL 1% baseada na lista de compradores recentes</li>
+        <li>Público secundário (criativo geral): interesses em peças automotivas, manutenção de carro, mecânica — segmentação para expansão da frente de carro com criativo não segmentado por modelo*</li>
+        <li>Formato: imagem ou vídeo curto do produto em uso real</li>
+        <li>Copy: "Estribo Pro Tork para [modelo] — R$ XX. Entrega em 3 dias. Fale agora ↗"</li>
+        <li>KPI: custo por conversa iniciada &lt; R$ 15, taxa de fechamento no WhatsApp</li>
+      </ul>
+      <div class="tags"><span class="tag r">Sempre ativa</span><span class="tag b">Produto de margem como foco</span></div>
+      <p style="font-size:11px;color:var(--tx4);margin-top:12px;border-top:1px solid var(--sf2);padding-top:10px">* Assim que for adicionada a comunicação de carros, avaliar o investimento novamente — recomenda-se acrescentar um orçamento adicional de 45% da verba desta campanha.</p>
+    </div>
+
+    <div class="card br">
+      <h4><span class="pill pill-1" style="margin-right:8px">Campanha 2</span> Tráfego — Landing Page (Catálogo)</h4>
+      <p>Campanha de consideração. Leva o público para a LP da Scarpa com o portfólio completo — ideal para quem ainda está comparando opções ou pesquisando qual peça comprar.</p>
+      <ul>
+        <li>Objetivo Meta: Tráfego para LP</li>
+        <li>Público: frio — motoboys + entusiastas por interesse</li>
+        <li>Formato: carrossel dos produtos âncora (guidão, estribo, cavalete, kit)</li>
+        <li>Pixel instalado na LP para captura de remarketing</li>
+        <li>CTA: "Ver catálogo completo" → LP → WhatsApp</li>
+        <li>KPI: CPC &lt; R$ 1,50, taxa de clique para WhatsApp &gt; 3%</li>
+      </ul>
+      <div class="tags"><span class="tag r">Sempre ativa</span></div>
+    </div>
+
+    <div class="card a">
+      <h4><span class="pill pill-1" style="margin-right:8px">Campanha 3</span> Ofertas Relâmpago — Estilo Galpão Motoparts</h4>
+      <p>Campanha semanal de promoção. O Galpão Motoparts usa "Terça da Yamarra" e "Quarta Louca" com grande sucesso. A Scarpa pode fazer o mesmo com sua identidade — criando hábito e antecipação nos seguidores.</p>
+      <ul>
+        <li>Objetivo Meta: Mensagens (WhatsApp) ou Tráfego</li>
+        <li>Frequência: 1–2 vezes por semana, produto diferente</li>
+        <li>Formato: Reels ou Stories com contagem regressiva</li>
+        <li>Produto: rotar entre guidão, estribo, cavalete, kit (nunca o mesmo por 2 semanas)</li>
+        <li>Copy: urgência real (estoque limitado) sem falsas promessas</li>
+        <li>Datas gêmeas (06/06, 07/07, 08/08…): aproveitar as ações promocionais já rodadas internamente nessas datas para replicar a mesma oferta no Meta Ads — mesma mecânica, novo canal</li>
+        <li>KPI: alcance, mensagens iniciadas, conversão</li>
+      </ul>
+      <div class="tags"><span class="tag a">Rotativo — 1x/semana</span></div>
+    </div>
+
+    <div class="card pu">
+      <h4><span class="pill pill-4" style="margin-right:8px">Campanha 4</span> Remarketing — Reativar Interessados</h4>
+      <p>Reativar quem visitou a LP, engajou com o perfil ou iniciou conversa sem fechar. CPL menor do que público frio — já conhecem a marca.</p>
+      <ul>
+        <li>Segmento A: visitou LP nos últimos 30 dias sem iniciar conversa</li>
+        <li>Segmento B: engajou com o Instagram (curtiu, salvou, visitou perfil) nos últimos 60 dias</li>
+        <li>Copy: prova social (cliente real) ou oferta complementar ao produto visualizado</li>
+        <li>KPI: CPL, taxa de retorno ao WhatsApp</li>
+      </ul>
+      <div class="tags"><span class="tag pu">Sempre ativa — audiências dinâmicas</span></div>
+    </div>
+
+    <div class="card br">
+      <h4><span class="pill pill-1" style="margin-right:8px">Campanha 5</span> Visitas ao Perfil do Instagram</h4>
+      <p>Campanha de topo de funil para crescimento de audiência orgânica. Leva o público frio para o perfil @scarpa_on — cada novo seguidor é um lead em potencial que a Scarpa passa a alcançar gratuitamente no orgânico.</p>
+      <ul>
+        <li>Objetivo Meta: Visitas ao perfil do Instagram</li>
+        <li>Público: homens 25–55, interesses em motocicleta, motoboy, mecânica de motos</li>
+        <li>Formato: Reels 15–30s mostrando produto em uso real na moto</li>
+        <li>Copy: posicionamento de marca — quem é a Scarpa on e o que ela entrega</li>
+        <li>KPI: CPM, crescimento de seguidores, alcance de novos públicos</li>
+      </ul>
+      <div class="tags"><span class="tag r">Sempre ativa — topo de funil</span></div>
+    </div>
+
+    <div class="card g">
+      <h4><span class="pill pill-3" style="margin-right:8px">Campanha 6</span> B2B — Oficinas e Revendedores</h4>
+      <p>Campanha específica para atrair oficinas mecânicas e revendedores. Segmentação por cargo + interesse. Ticket B2B justifica custo por lead mais alto.</p>
+      <ul>
+        <li>Público: cargo mecânico, dono de oficina, entusiastas de personalização 25–55</li>
+        <li>Copy: "Parceiro Scarpa on — condições especiais para revendedores e oficinas"</li>
+        <li>Formato: imagem profissional + tabela de benefícios B2B</li>
+        <li>Destino: LP B2B ou WhatsApp com mensagem pré-preenchida de atacado</li>
+        <li>KPI: CPL &lt; R$ 25, conversão B2B pelo WhatsApp</li>
+      </ul>
+      <div class="tags"><span class="tag g">Ticket alto</span></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>Diretrizes de Criativo</h3>
+  <div class="ibox ok"><strong>O que funciona para motoboys:</strong> Produto em contexto real — na moto, na rua, sendo instalado. Vídeos curtos (15–30s) de Alessandro ou o irmão do Vinícius mostrando como o produto é montado. Linguagem direta e técnica, sem enrolação. Preço visível no anúncio quando competitivo.</div>
+  <div class="ibox warn"><strong>O que evitar:</strong> Fotos genéricas de produto em fundo branco sem contexto. Linguagem muito formal ou "corporativa". Copy longa. Imagens com pessoas que não são do universo da moto.</div>
+
+  <div class="cards">
+    <div class="card br">
+      <h4>Formato 1 — Vídeo Produto em Moto (15–30s)</h4>
+      <p>Mostrar o produto sendo instalado ou em uso na moto. Alessandro ou o irmão de Vinícius como protagonista. Tom prático, sem scripts. Formato 9:16 para Stories e Reels.</p>
+    </div>
+    <div class="card b">
+      <h4>Formato 2 — Carrossel de Produtos</h4>
+      <p>4–6 slides com guidão, estribo, cavalete e kit. Cada slide com foto limpa do produto, modelo de moto compatível e preço. Ideal para campanha de tráfego para LP.</p>
+    </div>
+    <div class="card g">
+      <h4>Formato 3 — Imagem Produto + Oferta</h4>
+      <p>Foto do produto com preço destacado, prazo de entrega e CTA direto para WhatsApp. Funciona bem para ofertas relâmpago e campanhas de mensagem.</p>
+    </div>
+    <div class="card a">
+      <h4>Formato 4 — Prova Social</h4>
+      <p>Screenshot de conversa de cliente satisfeito (com permissão) ou depoimento em vídeo. Constrói confiança para quem ainda não conhece a marca.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>KPIs de Performance — Meta Ads</h3>
+  <div class="kpi-grid" style="margin-bottom:0">
+    <div class="kpi r"><div class="kpi-lbl">CPM médio esperado</div><div class="kpi-val">R$ 15–30</div><div class="kpi-note">Meta Ads Brasil — público de nicho</div></div>
+    <div class="kpi r"><div class="kpi-lbl">CTR alvo (Feed)</div><div class="kpi-val">&gt; 1,5%</div><div class="kpi-note">Criativo relevante para motoboy</div></div>
+    <div class="kpi g"><div class="kpi-lbl">CPL — Mensagem WhatsApp</div><div class="kpi-val">&lt; R$ 15</div><div class="kpi-note">Campanha de mensagens — fase inicial</div></div>
+    <div class="kpi g"><div class="kpi-lbl">CPL — Tráfego LP</div><div class="kpi-val">&lt; R$ 8</div><div class="kpi-note">Clique → visita à Landing Page</div></div>
+    <div class="kpi b"><div class="kpi-lbl">CPL — Remarketing</div><div class="kpi-val">&lt; R$ 10</div><div class="kpi-note">Público quente — menor custo</div></div>
+    <div class="kpi b"><div class="kpi-lbl">CPL — B2B</div><div class="kpi-val">&lt; R$ 25</div><div class="kpi-note">Justificado pelo ticket de atacado</div></div>
+    <div class="kpi a"><div class="kpi-lbl">ROAS alvo (M3–4)</div><div class="kpi-val">&gt; 3x</div><div class="kpi-note">Fase de aprendizado — revisar no M5</div></div>
+    <div class="kpi pu"><div class="kpi-lbl">Frequência alvo</div><div class="kpi-val">2–4x</div><div class="kpi-note">Por usuário / 7 dias — evitar fadiga</div></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     TAB 5 — TIKTOK ADS
+══════════════════════════════════════════════ -->
+<div id="tiktok" class="tab-pane">
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-ey">TikTok Ads — Estratégia Cautelosa</div>
+    <h2>TikTok Ads — Potencial alto, restrição ativa</h2>
+    <p class="sec-desc">O TikTok tem um dos menores custos por alcance entre as plataformas. Mas a Scarpa on tem restrição ativa na categoria de metais — guidão, estribo e pedal ainda aguardam aprovação manual. A estratégia é cautelosa até a confirmação.</p>
+  </div>
+
+  <div class="ibox danger"><strong>🔴 Restrição ativa — categoria de metais:</strong> O TikTok trata peças metálicas tratadas como "itens de segurança" e bloqueia anúncios e lives automaticamente. A conta já acumulou 15 pontos de penalidade. Qualquer escala antes da aprovação da categoria pode gerar bloqueio permanente da conta.</div>
+
+  <hr>
+
+  <h3 style="margin-bottom:6px">Boas práticas para evitar bloqueios</h3>
+  <p style="font-size:13px;color:var(--tx3);margin-bottom:16px">O TikTok tem sistema automatizado de detecção de conteúdo sensível. Seguir estas práticas reduz drasticamente o risco de penalidade na conta.</p>
+  <div class="cards" style="margin-bottom:28px">
+    <div class="card b">
+      <h4>Verificação de conta de anunciante</h4>
+      <p>Antes de rodar qualquer anúncio pago no TikTok Ads Manager, a conta precisa passar pela verificação de identidade da empresa. Sem isso, campanhas ficam limitadas ou são bloqueadas automaticamente.</p>
+      <ul>
+        <li>Acessar TikTok Ads Manager → Configurações → Verificação de conta</li>
+        <li>Documentos necessários: CNPJ, comprovante de endereço e documento do responsável legal</li>
+        <li>Prazo de análise: 1–3 dias úteis</li>
+        <li>Conta verificada tem limites maiores de gasto e menor risco de bloqueio</li>
+      </ul>
+      <div class="tags"><span class="tag b">Pré-requisito para anunciar</span></div>
+    </div>
+    <div class="card a">
+      <h4>Regras para evitar bloqueio de anúncios</h4>
+      <p>O TikTok classifica automaticamente peças metálicas como "itens de segurança". Estas práticas reduzem o risco de rejeição de criativos.</p>
+      <ul>
+        <li>Não usar palavras como "proteção", "segurança" ou "resistência" nos primeiros 3 segundos do vídeo</li>
+        <li>Evitar close em peças metálicas isoladas — mostrar sempre o produto montado na moto</li>
+        <li>Não mencionar "substituição de peças originais" na copy — focar em personalização ou upgrade</li>
+        <li>Testar criativos com produtos sem restrição antes de escalar para linha de metal</li>
+        <li>Revisar o Centro de Políticas do TikTok Ads antes de cada novo criativo</li>
+      </ul>
+      <div class="tags"><span class="tag a">Aplicar em todos os criativos</span></div>
+    </div>
+    <div class="card g">
+      <h4>Gestão de pontuação da conta</h4>
+      <p>A conta TikTok acumulou pontos de penalidade. Zerar a pontuação e manter a conta saudável é pré-requisito para escalar anúncios de metais.</p>
+      <ul>
+        <li>Monitorar pontuação semanalmente no TikTok Seller Center</li>
+        <li>Não publicar lives ou anúncios com produtos bloqueados enquanto há pontos ativos</li>
+        <li>Contestar penalidades indevidas via Central de Suporte do TikTok com evidências</li>
+        <li>Manter taxa de aprovação de produtos acima de 90% antes de escalar investimento</li>
+      </ul>
+      <div class="tags"><span class="tag g">Monitorar semanalmente</span></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>Fase 1 (Imediata) — Enquanto aguarda aprovação da categoria</h3>
+  <div class="cards">
+    <div class="card g">
+      <h4>Otimizar programa de afiliados</h4>
+      <p>53% das vendas já vêm de afiliados — é o canal que funciona sem restrição. Estruturar melhor o programa: recrutar mais afiliados, definir comissão competitiva e fornecer materiais de apoio.</p>
+      <ul>
+        <li>Mapear afiliados mais produtivos e oferecer condições melhores</li>
+        <li>Criar kit de conteúdo para afiliados (fotos, vídeos curtos, copy pronto)</li>
+        <li>Comissão competitiva — alinhar com Vinícius a margem disponível</li>
+        <li>Recrutar novos afiliados via hashtags do nicho: #motoboy #tipmoto #mecânicademoto</li>
+      </ul>
+      <div class="tags"><span class="tag g">Pode fazer agora</span></div>
+    </div>
+    <div class="card br">
+      <h4>Conteúdo orgânico — sem metal</h4>
+      <p>Produzir conteúdo orgânico com produtos que não têm restrição: capacete coquinho, protetores, bagageiros, produtos Gitanes estéticos. Construir audiência sem risco de penalidade.</p>
+      <ul>
+        <li>Vídeos de instalação/uso de produtos sem restrição de categoria</li>
+        <li>Construir audiência orgânica que será aproveitada quando os metais forem aprovados</li>
+        <li>Tom: linguagem de motoboy, prático, sem filtro</li>
+      </ul>
+      <div class="tags"><span class="tag r">Sempre ativo</span></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>Fase 2 — Após confirmação de aprovação da categoria</h3>
+
+  <div class="ibox ok"><strong>Confirmação necessária:</strong> Antes de avançar para as campanhas abaixo, confirmar com Alessandro o status da aprovação da categoria de metais. Se aprovada, verificar se a pontuação de penalidade (15 pontos) já foi revertida. Só então escalar.</div>
+
+  <div class="cards">
+    <div class="card b">
+      <h4><span class="pill pill-2" style="margin-right:8px">Campanha 1</span> Spark Ads — Amplificar Orgânico</h4>
+      <p>Impulsionar os melhores posts orgânicos como anúncio. 100% nativo — parece post real. O algoritmo do TikTok favorece conteúdo com engajamento orgânico comprovado.</p>
+      <ul>
+        <li>Seleção: post com maior engajamento da semana</li>
+        <li>Objetivo: Alcance / Visitas ao perfil</li>
+        <li>Público: homens 18–45, interesse em motocicleta, motoboy, mecânica</li>
+        <li>Orçamento inicial: R$ 30–50/dia por post impulsionado</li>
+        <li>KPI: custo por visualização, novos seguidores, cliques no link do perfil</li>
+      </ul>
+      <div class="tags"><span class="tag g">Baixo risco — amplifica orgânico existente</span></div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     TAB 6 — ROADMAP
+══════════════════════════════════════════════ -->
+<div id="roadmap" class="tab-pane">
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-ey">Calendário de Implementação</div>
+    <h2>Roadmap — 12 Meses</h2>
+    <p class="sec-desc">Visualização de quando cada campanha entra em operação. Os meses de início refletem os valores definidos na aba Budget.</p>
+  </div>
+
+  <div id="rdmpCalendar" style="overflow-x:auto"></div>
+
+  <hr>
+
+  <h3 style="margin-bottom:16px">Marcos estratégicos</h3>
+  <div id="rdmpMilestones"></div>
+
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     TAB — SAZONALIDADE
+══════════════════════════════════════════════ -->
+<div id="sazonalidade" class="tab-pane">
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-ey">Calendário Estratégico</div>
+    <h2>Sazonalidade — Quando e como escalar</h2>
+    <p class="sec-desc">O mercado de moto peças tem picos claros ao longo do ano. Esta aba mapeia cada período, a oportunidade associada e as ações recomendadas por canal.</p>
+  </div>
+
+  <div class="ibox brand"><strong>Lógica de sazonalidade para moto peças:</strong> O motoboy usa a moto todos os dias — não há baixa temporada real. O que varia é o tipo de demanda: manutenção preventiva (chuvas/inverno), reposição de desgaste (verão intenso) e presente/upgrade (datas comemorativas). As datas gêmeas criam picos adicionais de conversão que a Scarpa pode aproveitar ativamente.</div>
+
+  <hr>
+
+  <h3>Visão do Ano — Intensidade por Mês</h3>
+  <div class="tbl-wrap" style="margin-bottom:32px">
+    <table>
+      <thead><tr><th>Mês</th><th>Evento principal</th><th>Demanda</th><th>Produto foco</th></tr></thead>
+      <tbody>
+        <tr><td class="td-m">Junho</td><td>Início inverno · 06/06 Data Gêmea</td><td><span class="bdg bdg-a">MÉDIA</span></td><td>Protetores, cavalete, estribo</td></tr>
+        <tr><td class="td-m">Julho</td><td>07/07 Data Gêmea · Férias escolares</td><td><span class="bdg bdg-a">MÉDIA</span></td><td>Guidão, kits estéticos, Gitanes</td></tr>
+        <tr><td class="td-m">Agosto</td><td>08/08 Data Gêmea · Fim do inverno</td><td><span class="bdg bdg-b">ALTA</span></td><td>Linha de metal completa, bagageiros</td></tr>
+        <tr><td class="td-m">Setembro</td><td>Pré-Black Friday — pesquisa cresce</td><td><span class="bdg bdg-b">ALTA</span></td><td>Todos — capturar leads para BF</td></tr>
+        <tr><td class="td-m">Outubro</td><td>Dia das Crianças (10/10) · 10/10 Gêmea</td><td><span class="bdg bdg-b">ALTA</span></td><td>Capacete coquinho, produtos Gitanes</td></tr>
+        <tr><td class="td-m">Novembro</td><td>Black Friday · 11/11 Data Gêmea</td><td><span class="bdg bdg-r" style="background:var(--rds);color:var(--rd)">PICO</span></td><td>Toda a linha — ofertas relâmpago</td></tr>
+        <tr><td class="td-m">Dezembro</td><td>Natal · Fim de ano</td><td><span class="bdg bdg-b">ALTA</span></td><td>Guidão cromado, Gitanes (presentes)</td></tr>
+        <tr><td class="td-m">Janeiro</td><td>Motoboys voltam ao trabalho em força</td><td><span class="bdg bdg-r" style="background:var(--rds);color:var(--rd)">PICO</span></td><td>Estribo, cavalete, pedal, kit manutenção</td></tr>
+        <tr><td class="td-m">Fevereiro</td><td>Carnaval — entregadores em ritmo máximo</td><td><span class="bdg bdg-b">ALTA</span></td><td>Peças de desgaste, reposição urgente</td></tr>
+        <tr><td class="td-m">Março</td><td>Chuvas intensas — manutenção preventiva</td><td><span class="bdg bdg-b">ALTA</span></td><td>Protetores, cavalete, estribo, kit</td></tr>
+        <tr><td class="td-m">Abril</td><td>Pós-chuvas — revisão geral</td><td><span class="bdg bdg-a">MÉDIA</span></td><td>Linha de metal completa</td></tr>
+        <tr><td class="td-m">Maio</td><td>Dia das Mães · Estabilização</td><td><span class="bdg bdg-a">MÉDIA</span></td><td>Produtos Gitanes (presente)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <h3>Datas Gêmeas — Estratégia de Ativação</h3>
+  <p style="font-size:13px;color:var(--tx3);margin-bottom:20px">As datas gêmeas (06/06, 07/07, 08/08, 09/09, 10/10, 11/11) são oportunidades de promoção criadas pelo comportamento de compra online. A Scarpa pode usar as mesmas mecânicas já testadas internamente e replicá-las via Meta Ads no mesmo dia.</p>
+
+  <div class="cards">
+    <div class="card b">
+      <h4>Como ativar uma data gêmea</h4>
+      <ul>
+        <li>3 dias antes: criar criativo no Meta com countdown "faltam X dias para o 11/11"</li>
+        <li>No dia: subir budget 15–20% a partir das 6h (motoboys já estão acordados)</li>
+        <li>Formato: Stories + Reels com produto + preço + urgência ("só hoje")</li>
+        <li>CTA: mensagem direta para WhatsApp com texto pré-preenchido</li>
+        <li>Após o dia: pausar o criativo — não deixar rodar no dia seguinte</li>
+      </ul>
+    </div>
+    <div class="card a">
+      <h4>Produtos recomendados por data</h4>
+      <ul>
+        <li>06/06: Estribo e pedal — início do inverno, manutenção preventiva</li>
+        <li>07/07: Guidão cromado — upgrade estético de verão tardio</li>
+        <li>08/08: Kit completo de metal — fim do inverno, revisão geral</li>
+        <li>10/10: Capacete coquinho + Gitanes — presente Dia das Crianças</li>
+        <li>11/11: Toda a linha — Black Friday antecipado, maior desconto do ano</li>
+      </ul>
+    </div>
+    <div class="card br">
+      <h4>Black Friday — Plano específico</h4>
+      <ul>
+        <li>Semana antes (18–21/nov): teaser de ofertas, remarketing intenso</li>
+        <li>Dia 28/11: aumentar budget 50% em todos os canais simultaneamente</li>
+        <li>Formato: carrossel de ofertas no Meta + Google Search com extensão de promoção</li>
+        <li>Oferta mínima: 15% de desconto real (não inflacionar preço antes)</li>
+        <li>Pós-BF: aproveitar audiência aquecida para campanha de Natal no começo de dezembro</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>Ajuste de Budget por Período</h3>
+  <div class="three-col">
+    <div class="dark-blk" style="margin-bottom:0">
+      <div class="ts">ALTA TEMPORADA — PICO</div>
+      <p>Janeiro, Novembro (BF): aumentar 30–50% em todos os canais. São os meses de maior retorno — cada real investido gera mais do que nos meses base.</p>
+    </div>
+    <div class="dark-blk" style="margin-bottom:0">
+      <div class="ts">DATAS ESPECÍFICAS</div>
+      <p>Datas gêmeas e datas comemorativas (Dia das Crianças, Natal, Dia das Mães): aumentar 15–20% por 3–5 dias em torno da data. Meta Ads tem entrega acelerada nesses picos.</p>
+    </div>
+    <div class="dark-blk" style="margin-bottom:0">
+      <div class="ts">BAIXA RELATIVA</div>
+      <p>Abril e Junho (antes do inverno consolidar): manter budget base. Não cortar — motoboy continua usando a moto. Apenas ajustar produto foco para o momento do ano.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     TAB — BUDGET 12M
+══════════════════════════════════════════════ -->
+<div id="budget" class="tab-pane">
+<div class="sec">
+  <div class="sec-head">
+    <div class="sec-ey">Planejamento Financeiro</div>
+    <h2>Budget 12M — Jun/26 a Mai/27</h2>
+    <p class="sec-desc">Investimento recomendado por campanha. Edite os valores e o mês de início — a projeção de leads e o gráfico atualizam em tempo real.</p>
+  </div>
+
+  <div class="budget-note">✏️ <strong>Como usar:</strong> Ajuste o <strong>investimento mensal</strong> e o <strong>mês de início</strong> de cada campanha. A projeção de leads é calculada automaticamente pelo CPL de referência. Clique em <strong>💾 Salvar</strong> para gravar no seu navegador.</div>
+
+  <div class="tbl-wrap">
+    <table id="budgetTable">
+      <thead>
+        <tr>
+          <th style="min-width:220px">Campanha</th>
+          <th>Canal</th>
+          <th style="min-width:160px">Objetivo</th>
+          <th style="min-width:70px">CPL ref.</th>
+          <th style="min-width:120px;background:rgba(37,99,235,.04)">Início 📅</th>
+          <th style="min-width:120px;background:rgba(255,0,55,.04)">Invest./mês</th>
+          <th style="min-width:110px">Projeção</th>
+        </tr>
+      </thead>
+      <tbody id="budgetBody"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5" class="td-tot">TOTAL INVESTIDO</td>
+          <td class="td-tot" id="bgt-tot-inv">—</td>
+          <td class="td-tot" id="bgt-tot-leads">—</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <hr>
+  <h3 style="margin-bottom:4px">Investimento Mensal por Canal</h3>
+  <p style="font-size:13px;color:var(--tx3);margin-bottom:16px">Distribuição do investimento ao longo dos 12 meses, agrupado por canal. Atualiza conforme você edita a tabela acima.</p>
+  <div class="chart-box">
+    <div style="position:relative;height:280px"><canvas id="monthlyCanvas"></canvas></div>
+  </div>
+  <div id="monthlyTotalBlk" style="margin-top:16px"></div>
+
+  <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+    <button id="saveBudgetBtn" onclick="saveBudgetNew()" style="background:var(--brand);color:#fff;border:none;padding:9px 22px;border-radius:6px;font-family:var(--fd);font-size:12px;font-weight:700;cursor:pointer;letter-spacing:-.01em">💾 Salvar &amp; gerar link</button>
+    <div id="shareBox" style="display:none;flex:1;min-width:200px">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Link para compartilhar</div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <input id="shareUrl" readonly style="flex:1;border:1px solid var(--bd);border-radius:6px;padding:6px 10px;font-size:11px;font-family:var(--fb);color:var(--tx2);background:var(--sf);cursor:pointer" onclick="this.select()"/>
+        <button onclick="copyShareUrl()" style="background:var(--sf);border:1px solid var(--bd);padding:6px 14px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;color:var(--tx2)" id="copyBtn">Copiar</button>
+      </div>
+      <p style="font-size:11px;color:var(--tx4);margin-top:6px;margin-bottom:0">Qualquer dispositivo que abrir este link carrega os mesmos valores.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>V4 Aguiar &amp; CO · Planejamento Estratégico 12M — Scarpa on · Junho 2026</p>
+  <p style="margin-top:4px">Elaborado por Carolina Rodrigues (Tráfego) · Max (Account) · Ana (Copy) · Ryan (Design)</p>
+</footer>
+
+<script>
+function switchTab(id){
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelector('[data-tab="'+id+'"]').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── Budget (modelo por campanha) ──
+const MONTHS_LBL=['Jun','Jul','Ago','Set','Out','Nov','Dez','Jan','Fev','Mar','Abr','Mai'];
+const STORAGE_KEY_NEW='scarpa-budget-v2';
+let monthlyChart=null;
+
+const CAMPS=[
+  // GOOGLE
+  {id:'g_margem', name:'Google — Pesquisa Produtos de Margem', tipo:'Google', obj:'Conversão — guidão, estribo, cavalete, kits, Gitanes', cpl:12,  inv:3000, start:0},
+  {id:'g_b2b',    name:'Google — Pesquisa B2B',               tipo:'Google', obj:'Leads oficinas e revendedores',                cpl:30,  inv:800,  start:4},
+  {id:'g_yt',     name:'Google — YouTube Ads',                tipo:'Google', obj:'Topo de funil — problema→solução em vídeo',   cpl:null,inv:600,  start:2},
+  {id:'g_rmkt',   name:'Google — RMKT Display',               tipo:'Google', obj:'Reativar visitantes da LP',                   cpl:15,  inv:500,  start:3},
+  {id:'g_pmax',   name:'Google — Performance Max',            tipo:'Google', obj:'Monetização — conversão em todos os canais Google', cpl:10,  inv:900,  start:6},
+  // META
+  {id:'m_insta',  name:'Meta — Visitas ao Perfil Instagram',  tipo:'Meta',   obj:'Crescimento de audiência — topo de funil',    cpl:null,inv:500,  start:2},
+  {id:'m_msg',    name:'Meta — Mensagens WhatsApp',           tipo:'Meta',   obj:'Conversão direta — motoboy para WhatsApp',    cpl:15,  inv:1500, start:2},
+  {id:'m_traf',   name:'Meta — Tráfego LP',                   tipo:'Meta',   obj:'Consideração — catálogo de produtos',         cpl:8,   inv:1000, start:2},
+  {id:'m_flash',  name:'Meta — Ofertas Relâmpago',            tipo:'Meta',   obj:'Conversão semanal + datas gêmeas',            cpl:12,  inv:800,  start:2},
+  {id:'m_rmkt',   name:'Meta — Remarketing',                  tipo:'Meta',   obj:'Reativar interessados da LP e do perfil',     cpl:10,  inv:600,  start:3},
+  {id:'m_b2b',    name:'Meta — B2B Oficinas/Revendedores',    tipo:'Meta',   obj:'Leads B2B — ticket alto',                    cpl:25,  inv:800,  start:4},
+  // TIKTOK
+  {id:'t_spark',  name:'TikTok — Spark Ads',                  tipo:'TikTok', obj:'Amplificar melhor post orgânico da semana',   cpl:null,inv:800,  start:4},
+];
+
+function fBRL(n){return'R$ '+Math.round(n).toLocaleString('pt-BR');}
+function getMesIdx(id){const el=document.getElementById('mes_'+id);return el?parseInt(el.value):0;}
+function getInv(id){const el=document.getElementById('inv_'+id);return el?(parseFloat(el.value)||0):0;}
+
+function mSel(id,def){
+  let s='<select class="bi" id="mes_'+id+'" onchange="recalcBgt()" style="cursor:pointer">';
+  MONTHS_LBL.forEach((m,i)=>s+='<option value="'+i+'"'+(i===def?' selected':'')+'>M'+(i+1)+' '+m+'</option>');
+  return s+'</select>';
+}
+
+function buildBudgetTable(){
+  const tbody=document.getElementById('budgetBody');
+  if(!tbody)return;
+  tbody.innerHTML='';
+  let lastTipo='';
+  CAMPS.forEach(c=>{
+    if(c.tipo!==lastTipo){
+      const sep=document.createElement('tr');
+      const color=c.tipo==='Meta'?'rgba(255,0,55,.04)':c.tipo==='Google'?'rgba(37,99,235,.04)':'rgba(124,58,237,.04)';
+      sep.innerHTML=`<td colspan="7" style="background:${color};padding:5px 10px;font-family:var(--fd);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tx4)">${c.tipo}</td>`;
+      tbody.appendChild(sep);
+      lastTipo=c.tipo;
+    }
+    const badgeCls=c.tipo==='Meta'?'bdg-r':c.tipo==='Google'?'bdg-b':'bdg-pu';
+    const rowBg=c.tipo==='Meta'?'rgba(255,0,55,.01)':c.tipo==='Google'?'rgba(37,99,235,.01)':'rgba(124,58,237,.01)';
+    const cplTxt=c.cpl?('R$ '+c.cpl):'-';
+    const tr=document.createElement('tr');
+    tr.style.background=rowBg;
+    tr.innerHTML=
+      `<td style="font-size:12px;font-weight:600;color:var(--tx);padding-left:14px">${c.name}</td>`+
+      `<td><span class="bdg ${badgeCls}">${c.tipo}</span></td>`+
+      `<td style="font-size:11px;color:var(--tx3)">${c.obj}</td>`+
+      `<td style="font-size:11px;text-align:center;color:var(--tx3)">${cplTxt}</td>`+
+      `<td class="td-editable">${mSel(c.id,c.start)}</td>`+
+      `<td class="td-editable"><input class="bi" type="number" id="inv_${c.id}" value="${c.inv}" min="0" oninput="recalcBgt()"></td>`+
+      `<td style="text-align:center;vertical-align:middle;padding:9px 8px" id="proj_${c.id}"></td>`;
+    tbody.appendChild(tr);
+  });
+  recalcBgt();
+}
+
+function recalcBgt(){
+  let tInv=0,tLeads=0;
+  CAMPS.forEach(c=>{
+    const inv=getInv(c.id);
+    tInv+=inv;
+    const el=document.getElementById('proj_'+c.id);
+    if(c.cpl&&inv>0){
+      const leads=Math.round(inv/c.cpl);
+      tLeads+=leads;
+      if(el)el.innerHTML=`<span style="font-family:var(--fd);font-size:12px;font-weight:700;color:var(--bl)">${leads.toLocaleString('pt-BR')} leads</span>`;
+    } else {
+      if(el)el.innerHTML=`<span style="color:var(--tx4);font-size:11px">Awareness</span>`;
+    }
+  });
+  const e1=document.getElementById('bgt-tot-inv');
+  const e2=document.getElementById('bgt-tot-leads');
+  if(e1)e1.textContent=fBRL(tInv);
+  if(e2)e2.textContent=tLeads>0?tLeads.toLocaleString('pt-BR')+' leads/mês':'—';
+  buildMonthlyChart();
+  updateObjBreakdown();
+  buildRoadmapCalendar();
+}
+
+function buildMonthlyChart(){
+  const ctx=document.getElementById('monthlyCanvas');
+  if(!ctx)return;
+  const gData=Array(12).fill(0),mData=Array(12).fill(0),tData=Array(12).fill(0);
+  CAMPS.forEach(c=>{
+    const inv=getInv(c.id);
+    const start=getMesIdx(c.id);
+    for(let i=start;i<12;i++){
+      if(c.tipo==='Google')gData[i]+=inv;
+      else if(c.tipo==='Meta')mData[i]+=inv;
+      else tData[i]+=inv;
+    }
+  });
+  const totals=gData.map((_,i)=>gData[i]+mData[i]+tData[i]);
+  const total12=totals.reduce((a,b)=>a+b,0);
+  if(monthlyChart){monthlyChart.destroy();monthlyChart=null;}
+  monthlyChart=new Chart(ctx.getContext('2d'),{
+    type:'bar',
+    data:{
+      labels:MONTHS_LBL.map((m,i)=>'M'+(i+1)+' '+m),
+      datasets:[
+        {label:'Google Ads',data:gData,backgroundColor:'rgba(37,99,235,.75)',stack:'s'},
+        {label:'Meta Ads',data:mData,backgroundColor:'rgba(255,0,55,.75)',stack:'s'},
+        {label:'TikTok Ads',data:tData,backgroundColor:'rgba(124,58,237,.75)',stack:'s'},
+      ]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      interaction:{mode:'index',intersect:false},
+      plugins:{
+        legend:{labels:{font:{family:'Inter',size:11},boxWidth:12,padding:16}},
+        tooltip:{callbacks:{
+          label:c=>' '+c.dataset.label+': R$'+Math.round(c.parsed.y).toLocaleString('pt-BR'),
+          footer:items=>'Total: R$'+Math.round(items.reduce((s,i)=>s+i.parsed.y,0)).toLocaleString('pt-BR')
+        }}
+      },
+      scales:{
+        x:{stacked:true,ticks:{font:{size:10}}},
+        y:{stacked:true,grid:{color:'rgba(0,0,0,.05)'},ticks:{font:{size:10},callback:v=>'R$'+Math.round(v/1000)+'k'}}
+      }
+    }
+  });
+  const blk=document.getElementById('monthlyTotalBlk');
+  if(blk)blk.innerHTML=`<div style="background:#0A0A0A;border-radius:var(--r);padding:18px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px"><div style="font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4)">Total investido 12 meses</div><div style="font-family:var(--fd);font-size:22px;font-weight:700;color:var(--brand)">${fBRL(total12)}</div></div>`;
+}
+
+// Categorias de objetivo para breakdown
+const OBJ_CATS=[
+  {key:'conversao', label:'Conversão / Aquisição', color:'var(--brand)', ids:['g_margem','m_msg','m_traf','m_flash','t_spark']},
+  {key:'awareness', label:'Awareness / Topo de Funil', color:'var(--bl)', ids:['g_yt','m_insta']},
+  {key:'rmkt',      label:'Remarketing',              color:'var(--pu)', ids:['g_rmkt','m_rmkt']},
+  {key:'b2b',       label:'B2B — Oficinas e Revendedores', color:'var(--gr)', ids:['g_b2b','m_b2b']},
+  {key:'escala',    label:'Escala / Performance Max', color:'var(--am)', ids:['g_pmax']},
+];
+
+function getBudgetData(){
+  const data={};
+  CAMPS.forEach(c=>{
+    const el=document.getElementById('inv_'+c.id);
+    const ms=document.getElementById('mes_'+c.id);
+    if(el)data['inv_'+c.id]=el.value;
+    if(ms)data['mes_'+c.id]=ms.value;
+  });
+  return data;
+}
+
+function applyBudgetData(d){
+  if(!d)return;
+  CAMPS.forEach(c=>{
+    if(d['inv_'+c.id]!=null)c.inv=parseFloat(d['inv_'+c.id])||c.inv;
+    if(d['mes_'+c.id]!=null)c.start=parseInt(d['mes_'+c.id]);
+  });
+}
+
+function saveBudgetNew(){
+  const data=getBudgetData();
+  localStorage.setItem(STORAGE_KEY_NEW,JSON.stringify(data));
+  // Encode in URL hash for cross-device sharing
+  try{
+    const encoded=btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+    history.replaceState(null,null,'#bgt='+encoded);
+    const box=document.getElementById('shareBox');
+    const urlInput=document.getElementById('shareUrl');
+    if(box&&urlInput){box.style.display='flex';box.style.flexDirection='column';urlInput.value=window.location.href;}
+  }catch(e){}
+  const btn=document.getElementById('saveBudgetBtn');
+  if(btn){btn.textContent='✓ Salvo!';btn.style.background='var(--gr)';setTimeout(()=>{btn.textContent='💾 Salvar & gerar link';btn.style.background='var(--brand)';},2500);}
+}
+
+function copyShareUrl(){
+  const urlInput=document.getElementById('shareUrl');
+  if(urlInput){urlInput.select();navigator.clipboard.writeText(urlInput.value).catch(()=>document.execCommand('copy'));}
+  const btn=document.getElementById('copyBtn');
+  if(btn){btn.textContent='Copiado!';btn.style.background='var(--grs)';setTimeout(()=>{btn.textContent='Copiar';btn.style.background='';},2000);}
+}
+
+function loadBudgetNew(){
+  // 1. Try URL hash first (cross-device)
+  try{
+    const hash=window.location.hash;
+    if(hash&&hash.startsWith('#bgt=')){
+      const encoded=hash.slice(5);
+      const d=JSON.parse(decodeURIComponent(escape(atob(encoded))));
+      applyBudgetData(d);
+      // Show share box with current URL
+      const box=document.getElementById('shareBox');
+      const urlInput=document.getElementById('shareUrl');
+      if(box&&urlInput){box.style.display='flex';box.style.flexDirection='column';urlInput.value=window.location.href;}
+      return;
+    }
+  }catch(e){}
+  // 2. Fallback to localStorage
+  try{
+    const s=localStorage.getItem(STORAGE_KEY_NEW);
+    if(s)applyBudgetData(JSON.parse(s));
+  }catch(e){}
+}
+
+function updateObjBreakdown(){
+  const container=document.getElementById('objBreakdown');
+  if(!container)return;
+  let total=0;
+  const catTotals={};
+  OBJ_CATS.forEach(cat=>{
+    let sum=0;
+    cat.ids.forEach(id=>sum+=getInv(id));
+    catTotals[cat.key]=sum;
+    total+=sum;
+  });
+  if(total===0){container.innerHTML='';return;}
+  let html='<div style="display:flex;flex-direction:column;gap:10px">';
+  OBJ_CATS.forEach(cat=>{
+    const val=catTotals[cat.key];
+    const pct=total>0?Math.round(val/total*100):0;
+    if(val===0)return;
+    html+=`
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+          <span style="font-size:12px;font-weight:600;color:var(--tx)">${cat.label}</span>
+          <span style="font-family:var(--fd);font-size:13px;font-weight:700;color:var(--tx)">${pct}% <span style="font-size:11px;font-weight:400;color:var(--tx4)">— ${fBRL(val)}/mês</span></span>
+        </div>
+        <div style="height:8px;background:var(--sf2);border-radius:100px;overflow:hidden">
+          <div style="height:100%;width:${pct}%;background:${cat.color};border-radius:100px;transition:width .4s ease"></div>
+        </div>
+      </div>`;
+  });
+  html+='</div>';
+  container.innerHTML=html;
+}
+
+// ── Roadmap calendar ──
+const PHASES=[
+  {label:'Fundação',    span:2, color:'#FF0037', bg:'rgba(255,0,55,.06)'},
+  {label:'Expansão',    span:2, color:'#2563EB', bg:'rgba(37,99,235,.06)'},
+  {label:'TikTok+B2B',  span:2, color:'#16A34A', bg:'rgba(22,163,74,.06)'},
+  {label:'Escala',      span:3, color:'#7C3AED', bg:'rgba(124,58,237,.06)'},
+  {label:'Alta Temporada',span:3,color:'#D97706', bg:'rgba(217,119,6,.06)'},
+];
+
+const MILESTONES=[
+  {m:1, label:'07/07', sub:'Data gêmea'},
+  {m:2, label:'08/08', sub:'Data gêmea'},
+  {m:4, label:'10/10', sub:'Dia das Crianças'},
+  {m:5, label:'11/11 + BF', sub:'Black Friday 🔴'},
+  {m:6, label:'Natal', sub:'Presente de moto'},
+  {m:7, label:'Pico Jan', sub:'Motoboys em força'},
+  {m:9, label:'Chuvas', sub:'Manutenção preventiva'},
+  {m:11,label:'Dia das Mães', sub:'Gitanes presente'},
+];
+
+const CHAN_COLOR={Google:'#2563EB',Meta:'#FF0037',TikTok:'#7C3AED'};
+const CHAN_BG  ={Google:'rgba(37,99,235,.15)',Meta:'rgba(255,0,55,.12)',TikTok:'rgba(124,58,237,.15)'};
+
+function buildRoadmapCalendar(){
+  const cal=document.getElementById('rdmpCalendar');
+  const mil=document.getElementById('rdmpMilestones');
+  if(!cal||!mil)return;
+
+  const COL_W=64; const LBL_W=200;
+  const months=MONTHS_LBL;
+
+  // Read current start months from DOM (or default from CAMPS)
+  const startOf={};
+  CAMPS.forEach(c=>{
+    const el=document.getElementById('mes_'+c.id);
+    startOf[c.id]=el?parseInt(el.value):c.start;
+  });
+
+  let html='<table style="border-collapse:collapse;min-width:'+(LBL_W+COL_W*12)+'px;font-size:12px">';
+
+  // Phase header row
+  html+='<tr><td style="width:'+LBL_W+'px"></td>';
+  PHASES.forEach(p=>{
+    html+=`<td colspan="${p.span}" style="text-align:center;padding:6px 4px;font-family:var(--fd);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:${p.color};background:${p.bg};border-bottom:2px solid ${p.color};border-right:1px solid var(--bd)">${p.label}</td>`;
+  });
+  html+='</tr>';
+
+  // Month header row
+  html+='<tr><td style="width:'+LBL_W+'px;padding:6px 8px;background:var(--sf);font-family:var(--fd);font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--tx4)">Campanha</td>';
+  months.forEach((m,i)=>{
+    // find which phase this month belongs to
+    let phaseIdx=0,acc=0;
+    PHASES.forEach((p,pi)=>{if(i>=acc&&i<acc+p.span)phaseIdx=pi;acc+=p.span;});
+    const p=PHASES[phaseIdx];
+    html+=`<td style="width:${COL_W}px;text-align:center;padding:5px 2px;background:var(--sf);font-family:var(--fd);font-size:10px;font-weight:700;color:var(--tx3);border-left:1px solid var(--bd)">M${i+1}<br><span style="font-weight:400;font-size:9px;color:var(--tx4)">${m}</span></td>`;
+  });
+  html+='</tr>';
+
+  // Campaign rows grouped by channel
+  const groups=['Google','Meta','TikTok'];
+  groups.forEach(g=>{
+    const camps=CAMPS.filter(c=>c.tipo===g);
+    if(!camps.length)return;
+    // Group header
+    const col=CHAN_COLOR[g];
+    html+=`<tr><td colspan="${13}" style="padding:5px 8px;background:${CHAN_BG[g]};font-family:var(--fd);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:${col};border-top:2px solid ${col}">${g} Ads</td></tr>`;
+    camps.forEach(c=>{
+      const start=startOf[c.id]??c.start;
+      const inv=getInv(c.id);
+      const shortName=c.name.replace('Google — ','').replace('Meta — ','').replace('TikTok — ','');
+      html+=`<tr><td style="padding:7px 8px;font-size:11px;font-weight:500;color:var(--tx);border-bottom:1px solid var(--bd);border-right:2px solid var(--bd);max-width:${LBL_W}px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="${shortName}">${shortName}</td>`;
+      for(let m=0;m<12;m++){
+        const active=m>=start;
+        const isStart=m===start;
+        let cellStyle=`width:${COL_W}px;height:36px;text-align:center;vertical-align:middle;border-left:1px solid var(--bd);border-bottom:1px solid var(--bd);`;
+        if(active){
+          cellStyle+=`background:${CHAN_BG[g]};`;
+          let inner='';
+          if(isStart){
+            inner=`<div style="width:10px;height:10px;border-radius:50%;background:${col};margin:0 auto;box-shadow:0 0 0 3px ${CHAN_BG[g]}"></div>`;
+          } else {
+            inner=`<div style="height:4px;background:${col};opacity:.5;border-radius:2px;margin:0 6px"></div>`;
+          }
+          html+=`<td style="${cellStyle}">${inner}</td>`;
+        } else {
+          html+=`<td style="${cellStyle}background:var(--bg);"></td>`;
+        }
+      }
+      html+='</tr>';
+    });
+  });
+  html+='</table>';
+  cal.innerHTML=html;
+
+  // Legend
+  cal.innerHTML+=`<div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:14px;font-size:11px;color:var(--tx3)">
+    ${groups.map(g=>`<span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:${CHAN_COLOR[g]};display:inline-block"></span>${g} Ads</span>`).join('')}
+    <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:#0A0A0A;display:inline-block"></span>Início da campanha</span>
+    <span style="display:flex;align-items:center;gap:6px"><div style="width:24px;height:4px;background:var(--tx4);border-radius:2px;opacity:.4"></div>Campanha ativa</span>
+  </div>`;
+
+  // Milestones
+  let mhtml='<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px">';
+  MILESTONES.forEach(ms=>{
+    const phIdx=ms.m<2?0:ms.m<4?1:ms.m<6?2:ms.m<9?3:4;
+    const p=PHASES[Math.min(phIdx,4)];
+    mhtml+=`<div style="border:1px solid var(--bd);border-left:4px solid ${p.color};border-radius:8px;padding:12px 14px;background:var(--bg2)">
+      <div style="font-family:var(--fd);font-weight:700;font-size:14px;color:${p.color}">${ms.label}</div>
+      <div style="font-size:11px;color:var(--tx3);margin-top:2px">${ms.sub}</div>
+      <div style="font-size:10px;font-weight:600;color:var(--tx4);letter-spacing:.05em;text-transform:uppercase;margin-top:6px">M${ms.m+1} · ${MONTHS_LBL[ms.m]}</div>
+    </div>`;
+  });
+  mhtml+='</div>';
+  mil.innerHTML=mhtml;
+}
+
+loadBudgetNew();
+document.addEventListener('DOMContentLoaded',()=>{buildBudgetTable();buildRoadmapCalendar();});
+buildBudgetTable();
+buildRoadmapCalendar();
+</script>
+</body>
+</html>
